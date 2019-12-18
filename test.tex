@@ -1,0 +1,36 @@
+\documentclass[a4paper, 11pt]{scrartcl}
+
+\usepackage{microtype}
+
+\usepackage{fontspec}
+\setmainfont[Numbers = OldStyle]{Libertinus Serif}
+\setsansfont[Numbers = OldStyle]{Libertinus Sans}
+\setmonofont[Numbers = OldStyle]{Libertinus Sans}
+
+\usepackage[backend=biber, style = alphabetic, dateabbrev=false, urldate=long]{biblatex}
+\usepackage[colorlinks=true]{hyperref}
+
+% no unplaned surprises with \cite
+\DeclareFieldFormat{postnote}{#1}
+\DeclareFieldFormat{multipostnote}{#1}
+
+\DeclareFieldFormat[article,unpublished,incollection,thesis]{citetitle}{\mkbibitalic{#1}\isdot}
+\DeclareFieldFormat[article,unpublished,incollection,thesis]{title}{\mkbibitalic{#1}\isdot}
+\DeclareFieldFormat[article,book,collection,incollection]{number}{\mkbibbold{#1}}
+\DeclareFieldFormat[article,collection,incollection]{volume}{\mkbibbold{#1}}
+\DeclareFieldFormat[book]{pagetotal}{#1~\ppno}
+
+\bibliography{references.bib}
+\nocite{*}
+
+\begin{document}
+
+\emergencystretch = 1em
+
+\printbibliography[title = {Books}, type = book]
+\printbibliography[title = {Articles}, type = article]
+\printbibliography[title = {Collections}, type = collection]
+\printbibliography[title = {Incollections}, type = incollection]
+\printbibliography[title = {Others}, nottype=book, nottype=article, nottype = collection, nottype = incollection]
+
+\end{document}
