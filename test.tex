@@ -2,10 +2,11 @@
 
 \usepackage{microtype}
 
-\usepackage{fontspec}
+\usepackage{unicode-math}
 \setmainfont[Numbers = OldStyle]{Libertinus Serif}
 \setsansfont[Numbers = OldStyle]{Libertinus Sans}
-\setmonofont[Numbers = OldStyle]{Libertinus Sans}
+\setmonofont{Libertinus Sans} % dirty hack
+\setmathfont{Libertinus Math}
 
 \usepackage[backend=biber, style = alphabetic, dateabbrev=false, urldate=long]{biblatex}
 \usepackage[colorlinks=true]{hyperref}
@@ -25,12 +26,22 @@
 
 \begin{document}
 
+% slightly prevents overfull hboxes
 \emergencystretch = 1em
 
 \printbibliography[title = {Books}, type = book]
 \printbibliography[title = {Articles}, type = article]
 \printbibliography[title = {Collections}, type = collection]
 \printbibliography[title = {Incollections}, type = incollection]
-\printbibliography[title = {Others}, nottype=book, nottype=article, nottype = collection, nottype = incollection]
+\printbibliography[title = {Proceedings}, type = proceedings]
+\printbibliography[title = {Inproceedings}, type = inproceedings]
+\printbibliography[title = {Others},
+  nottype = book,
+  nottype = article,
+  nottype = collection,
+  nottype = incollection,
+  nottype = proceedings,
+  nottype = inproceedings
+  ]
 
 \end{document}
