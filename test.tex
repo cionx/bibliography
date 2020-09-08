@@ -11,13 +11,9 @@
 \usepackage[backend=biber, style = alphabetic, dateabbrev=false, urldate=long]{biblatex}
 \usepackage[colorlinks=true]{hyperref}
 
-% no unplaned surprises with \cite
-\DeclareFieldFormat{postnote}{#1}
-\DeclareFieldFormat{multipostnote}{#1}
-
 \DeclareFieldFormat[article,unpublished,incollection,thesis]{citetitle}{\mkbibitalic{#1}\isdot}
 \DeclareFieldFormat[article,unpublished,incollection,thesis]{title}{\mkbibitalic{#1}\isdot}
-\DeclareFieldFormat[article,book,collection,incollection]{number}{\mkbibbold{#1}}
+\DeclareFieldFormat[article,book,collection,incollection,proceedings,inproceedings]{number}{\mkbibbold{#1}}
 \DeclareFieldFormat[article,collection,incollection]{volume}{\mkbibbold{#1}}
 \DeclareFieldFormat[book]{pagetotal}{#1~\ppno}
 
