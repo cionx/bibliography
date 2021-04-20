@@ -5,16 +5,32 @@
 \usepackage{unicode-math}
 \setmainfont[Numbers = OldStyle]{Libertinus Serif}
 \setsansfont[Numbers = OldStyle]{Libertinus Sans}
-\setmonofont{Libertinus Sans} % dirty hack
 \setmathfont{Libertinus Math}
 
-\usepackage[backend=biber, style = alphabetic, dateabbrev=false, urldate=long]{biblatex}
-\usepackage[colorlinks=true]{hyperref}
+\usepackage[
+	backend    = biber,
+	style      = alphabetic,
+	dateabbrev = false,
+	urldate    = long
+]{biblatex}
+\usepackage[colorlinks = true]{hyperref}
+\urlstyle{sf}
 
 %\DeclareFieldFormat[article,unpublished,incollection,thesis]{citetitle}{\mkbibitalic{#1}\isdot}
 %\DeclareFieldFormat[article,unpublished,incollection,thesis]{title}{\mkbibitalic{#1}\isdot}
-\DeclareFieldFormat[article,book,collection,incollection,proceedings,inproceedings]{number}{\mkbibbold{#1}}
-\DeclareFieldFormat[article,collection,incollection]{volume}{\mkbibbold{#1}}
+\DeclareFieldFormat[
+	article,
+	book,
+	collection,
+	incollection,
+	proceedings,
+	inproceedings
+]{number}{\mkbibbold{#1}}
+\DeclareFieldFormat[
+	article,
+	collection,
+	incollection
+]{volume}{\mkbibbold{#1}}
 \DeclareFieldFormat[book]{pagetotal}{#1~\ppno}
 
 \bibliography{references.bib}
