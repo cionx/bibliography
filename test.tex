@@ -31,7 +31,10 @@
 	collection,
 	incollection
 ]{volume}{\mkbibbold{#1}}
-\DeclareFieldFormat[book]{pagetotal}{#1~\ppno}
+\DeclareFieldFormat[
+	book,
+	booklet
+]{pagetotal}{#1~\ppno}
 
 \bibliography{references.bib}
 \nocite{*}
