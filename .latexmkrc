@@ -15,7 +15,7 @@ $xelatex = 'xelatex %O -synctex=1 -interaction=nonstopmode -file-line-error %S';
 
 # the list of files to be compiled
 # by default all tex-files in the current directory are compiled
-@default_files = ( 'test.tex' );
+@default_files = ( 'overview.tex' );
 
 
 # search in subdirectories for packages
